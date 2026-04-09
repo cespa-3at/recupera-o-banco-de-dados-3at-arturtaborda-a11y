@@ -50,6 +50,49 @@ Não basta criar o arquivo; ele precisa estar no seu repositório remoto. Execut
 
 ----------
 
+## Implementação Realizada
+
+### Banco de Dados Criado
+- Arquivo: `biblioteca_arturtaborda.db`
+
+### Estrutura da Tabela `livros`
+```sql
+CREATE TABLE livros (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT NOT NULL,
+    autor TEXT NOT NULL,
+    ano_publicacao INTEGER,
+    isbn TEXT UNIQUE
+);
+```
+
+### Dados Inseridos
+- Pride and Prejudice | Jane Austen | 1813 | 978-0486284736
+- The Great Gatsby | F. Scott Fitzgerald | 1925 | 978-0743273565
+- 1984 | George Orwell | 1949 | 978-0451524935
+- The Catcher in the Rye | J.D. Salinger | 1951 | 978-0316769488
+- To Kill a Mockingbird | Harper Lee | 1960 | 978-0061120084
+
+### Teste de Restrição UNIQUE
+Tentativa de inserir ISBN duplicado resultou em erro: "UNIQUE constraint failed: livros.isbn"
+
+### Consulta Executada
+```sql
+SELECT titulo, autor FROM livros ORDER BY ano_publicacao;
+```
+Resultado:
+- Pride and Prejudice | Jane Austen
+- The Great Gatsby | F. Scott Fitzgerald
+- 1984 | George Orwell
+- The Catcher in the Rye | J.D. Salinger
+- To Kill a Mockingbird | Harper Lee
+
+### Git Commits
+- Commit realizado: "feat: estrutura e dados da biblioteca finalizados"
+- Push para branch `FabioIndex/2jat1`
+
+----------
+
  Regras de Ouro (O que será avaliado):
 
 -   **Sintaxe:**  O uso correto do  `;`  ao final dos comandos.
